@@ -28,19 +28,19 @@ app.post('/', function(req,res){
                     FNAME: firstName,
                     LNAME: lastName,
                 }
-            }, 
+            }
         ]
     }
 
     var jsonData = JSON.stringify(data);
 
-    //console.log(firstName,lastName,email)
+    console.log(firstName,lastName,email)
 
     var options = {
         url: 'https://us20.api.mailchimp.com/3.0/lists/33e5081242',
-        method: 'post',
+        method: "POST",
         headers: {
-            'Authorization': 'javi1 13ebbcc9e7b3b95757f293d40113918f-us20'
+            'Authorization': 'javierz299 ad7fa230f89a7ba3f1b2c53c86750b89-us20'
         },
 
         body: jsonData
@@ -57,6 +57,8 @@ app.post('/', function(req,res){
             res.sendFile(__dirname + "/failure.html")
            }
        }
+
+       console.log(response.statusCode)
 
     })
 
